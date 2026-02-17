@@ -54,3 +54,5 @@ build/
 # Node (if frontend added)
 
 node_modules/
+
+.DS_Store
