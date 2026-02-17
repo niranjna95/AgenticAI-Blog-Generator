@@ -1,0 +1,56 @@
+# Python cache
+
+**pycache**/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+
+venv/
+env/
+.venv/
+
+# Environment variables / secrets
+
+.env
+.env.*
+*.env
+
+# Logs
+
+*.log
+
+# Mac system files
+
+.DS_Store
+
+# VS Code
+
+.vscode/
+
+# Jupyter Notebook checkpoints
+
+.ipynb_checkpoints/
+
+# Data / models (optional)
+
+data/
+models/
+
+# Build files
+
+dist/
+build/
+
+# SQLite DB
+
+*.db
+
+# FastAPI cache
+
+*.sqlite3
+
+# Node (if frontend added)
+
+node_modules/
