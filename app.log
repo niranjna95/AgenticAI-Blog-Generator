@@ -1,0 +1,230 @@
+INFO:     Will watch for changes in these directories: ['/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI']
+INFO:     Uvicorn running on http://localhost:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [34513] using WatchFiles
+INFO:     Started server process [34539]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:49992 - "POST /blogs HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 105, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 424, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 312, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/app.py", line 30, in create_blogs
+    state =graph.invoke({"topic":topic})
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/langgraph/pregel/main.py", line 3071, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/langgraph/pregel/main.py", line 2643, in stream
+    while loop.tick():
+          ~~~~~~~~~^^
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/langgraph/pregel/_loop.py", line 472, in tick
+    self.tasks = prepare_next_tasks(
+                 ~~~~~~~~~~~~~~~~~~^
+        self.checkpoint,
+        ^^^^^^^^^^^^^^^^
+    ...<14 lines>...
+        cache_policy=self.cache_policy,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/langgraph/pregel/_algo.py", line 468, in prepare_next_tasks
+    if task := prepare_single_task(
+               ~~~~~~~~~~~~~~~~~~~^
+        (PULL, name),
+        ^^^^^^^^^^^^^
+    ...<17 lines>...
+        retry_policy=retry_policy,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/langgraph/pregel/_algo.py", line 614, in prepare_single_task
+    val = _proc_input(
+        proc,
+    ...<4 lines>...
+        scratchpad=scratchpad,
+    )
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/langgraph/pregel/_algo.py", line 1159, in _proc_input
+    val = proc.mapper(val)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/langgraph/graph/state.py", line 1489, in _coerce_state
+    return schema(**input)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for BlogState
+blog
+  Field required [type=missing, input_value={'topic': 'Agentic AI'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+current_language
+  Field required [type=missing, input_value={'topic': 'Agentic AI'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+Before task with name 'title_creation' and path '('__pregel_pull', 'title_creation')'
+WARNING:  WatchFiles detected changes in 'app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [34539]
+INFO:     Started server process [36645]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:50028 - "POST /blogs HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 105, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 424, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 312, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/app.py", line 31, in create_blogs
+    state = graph.invoke({"blog": {}, "current_language": "en", "topic": topic})
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/langgraph/pregel/main.py", line 3071, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/langgraph/pregel/main.py", line 2643, in stream
+    while loop.tick():
+          ~~~~~~~~~^^
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/langgraph/pregel/_loop.py", line 472, in tick
+    self.tasks = prepare_next_tasks(
+                 ~~~~~~~~~~~~~~~~~~^
+        self.checkpoint,
+        ^^^^^^^^^^^^^^^^
+    ...<14 lines>...
+        cache_policy=self.cache_policy,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/langgraph/pregel/_algo.py", line 468, in prepare_next_tasks
+    if task := prepare_single_task(
+               ~~~~~~~~~~~~~~~~~~~^
+        (PULL, name),
+        ^^^^^^^^^^^^^
+    ...<17 lines>...
+        retry_policy=retry_policy,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/langgraph/pregel/_algo.py", line 614, in prepare_single_task
+    val = _proc_input(
+        proc,
+    ...<4 lines>...
+        scratchpad=scratchpad,
+    )
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/langgraph/pregel/_algo.py", line 1159, in _proc_input
+    val = proc.mapper(val)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/langgraph/graph/state.py", line 1489, in _coerce_state
+    return schema(**input)
+  File "/Volumes/MyPendrive/Python/Agentic_AI/BlogAgenticAI/.venv/lib/python3.13/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for BlogState
+blog.title
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+blog.content
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+Before task with name 'title_creation' and path '('__pregel_pull', 'title_creation')'
